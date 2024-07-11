@@ -30,23 +30,26 @@ pipeline {
                 }
             }
         }
-        stage(" Push Docker Image to Docker Hub ") {
+        stage(' Push Docker Image to Docker Hub ') {
             steps {
                 script {
                     echo 'pushing the image to docker hub...'
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh "echo $PASS | docker login -u $USER --password-stdin "
-                        sh "docker push maven-app"
+                        sh "docker tag maven-app $USER/maven-app"
+                        sh "docker push $USER/maven-app"
                     }
                     
                 }
             }
         }
-        stage("deploy") {
+        stage(' Deploy the application on a container ') {
             steps {
                 script {
-                    echo " deploying the application ...."
-                    sh "docker run maven-app"
+                    echo ' deploying the application ....'
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER')]){
+                        sh " docker run $USER/maven-app "                        
+                    }
                 }
             }
         }
