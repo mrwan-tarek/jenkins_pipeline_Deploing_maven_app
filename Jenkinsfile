@@ -9,6 +9,8 @@ pipeline {
             steps {
                 script {
                    echo " testing the application ...."
+                    sh 'mvn archetype:generate -DgroupId=com.example -DartifactId=my-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+'
                     sh 'mvn test'
                 }
             }
