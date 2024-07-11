@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 EXPOSE 8090
 
-COPY ./target/java-maven-app-*.jar /usr/app/
+COPY ./target/my-app-*.jar /usr/app/
 WORKDIR /usr/app
 
-CMD java -jar java-maven-app-*.jar
+CMD java -jar my-app-*.jar
