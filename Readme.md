@@ -1,5 +1,5 @@
 # Jenkins Pipeline for Maven-based Java Application Deployment
-
+![Jenkins Pipeline](images/jenkins-pipeline.png)
 This Jenkins pipeline automates the build, test, and deployment process of a Maven-based Java application as a Docker container.
 
 ## Features
