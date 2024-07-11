@@ -1,19 +1,27 @@
-package com.example.app;
+package com.example;
 
-/**
- * Hello world!
- */
-public class App {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import javax.annotation.PostConstruct;
 
-    private static final String MESSAGE = "Hello World!";
+@SpringBootApplication
+public class Application {
 
-    public App() {}
-
-    public static void main(String[] args) {
-        System.out.println(MESSAGE);
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Application.class, args);
     }
 
-    public String getMessage() {
-        return MESSAGE;
+    @PostConstruct
+    public void init()
+    {
+        Logger log = LoggerFactory.getLogger(Application.class);
+        log.info("Java app started");
+    }
+
+    public String getStatus() {
+        return "OK";
     }
 }
