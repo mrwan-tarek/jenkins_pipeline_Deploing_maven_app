@@ -18,7 +18,6 @@ pipeline {
                 script {
                     echo 'building the application ....'
                     sh 'mvn package'
-                    sh 'ls -l ./target/'
                 }
             }
         }
