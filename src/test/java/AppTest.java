@@ -1,25 +1,16 @@
-package com.example.Application;
+import com.example.Application;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-/**
- * Unit test for simple App.
- */
-public class AppTest
-{
-    @Test
-    public void testAppConstructor() {
-        Application app1 = new Application();
-        Application app2 = new Application();
-        assertEquals(app1.getMessage(), app2.getMessage());
-    }
+public class AppTest {
 
     @Test
-    public void testAppMessage()
-    {
-        Application app = new Application();
-        assertEquals("Hello World!", Application.getMessage());
+    public void testApp() {
+        Application myApp = new Application();
+
+        String result = myApp.getStatus();
+
+        assertEquals("OK", result);
     }
+
 }
