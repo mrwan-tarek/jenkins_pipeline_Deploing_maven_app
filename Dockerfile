@@ -1,6 +1,6 @@
 FROM openjdk
 
-EXPOSE 8090
+EXPOSE 8080
 
 COPY ./target/java-maven-app-*.jar /usr/app/
 WORKDIR /usr/app
