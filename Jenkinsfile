@@ -36,7 +36,7 @@ pipeline {
                     echo 'pushing the image to docker hub...'
                     withCredentials([script.usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh "echo $PASS | docker login -u $USER --password-stdin "
-                        sh "docker push Maven-app"
+                        sh "docker push maven-app"
                     }
                     
                 }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     echo " deploying the application ...."
-                    sh "docker run Maven-app"
+                    sh "docker run maven-app"
                 }
             }
         }
