@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     echo ' deploying the application ....'
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER')]){
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh " docker run $USER/maven-app "                        
                     }
                 }
