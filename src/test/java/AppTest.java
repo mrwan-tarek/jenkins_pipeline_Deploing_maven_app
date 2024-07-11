@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.Application;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,15 +11,15 @@ public class AppTest
 {
     @Test
     public void testAppConstructor() {
-        App app1 = new App();
-        App app2 = new App();
+        Application app1 = new Application();
+        Application app2 = new Application();
         assertEquals(app1.getMessage(), app2.getMessage());
     }
 
     @Test
     public void testAppMessage()
     {
-        App app = new App();
-        assertEquals("Hello World!", app.getMessage());
+        Application app = new Application();
+        assertEquals("Hello World!", Application.getMessage());
     }
 }
