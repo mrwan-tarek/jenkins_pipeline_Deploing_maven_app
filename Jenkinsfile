@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     echo 'building the docker image...'
-                    sh 'docker build -t Maven-app .'
+                    sh 'docker build -t maven-app .'
                     
                 }
             }
